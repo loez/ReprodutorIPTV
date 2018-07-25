@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Reprodutor_Video"
+             x:Class="Reprodutor_Video.MainPage"
+             xmlns:roxv="clr-namespace:Rox;assembly=Rox.Xamarin.Video.Portable"
+             >
+
+    <MasterDetailPage.Master>
+        <ContentPage Title="Canais">
+
+            <StackLayout Spacing="10" Margin="10,10,10,10" HorizontalOptions="Fill">
+                    <Label Text="Insira o Endereço da Lista:"/>
+                    <StackLayout Orientation="Horizontal">
+                    <Entry x:Name="Caminho" Placeholder="Digite o endereço da Lista" HorizontalOptions="Fill"/>
+                    <Button x:Name="IR" Text="IR" Clicked="IR_Clicked" />
+                </StackLayout>
+                    <Label Text="Canais:"/>
+                    <ListView x:Name="Canais" ItemSelected="Canais_ItemSelected" HorizontalOptions="Fill">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal">
+                                    <Image Source="{Binding logo}" HeightRequest="50" WidthRequest="50" />
+                                        <Label Text="{Binding canalnome}"/>
+                                        <Label Text="{Binding linkurl}" IsVisible="False"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+            </ListView.ItemTemplate>
+                    </ListView>
+            </StackLayout>
+
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <local:Player/> 
+    </MasterDetailPage.Detail>
+
+</MasterDetailPage>

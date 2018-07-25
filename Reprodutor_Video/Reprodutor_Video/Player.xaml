@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:roxv="clr-namespace:Rox;assembly=Rox.Xamarin.Video.Portable"
+             x:Class="Reprodutor_Video.Player">
+    <ContentPage.Content>
+        <StackLayout Spacing="10">
+            <Label x:Name="Assistindo" HorizontalTextAlignment="Center" />
+            <roxv:VideoView x:Name="VPlayer" AutoPlay="True" HeightRequest="900" WidthRequest="600" ShowController="True" /> 
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
