@@ -89,11 +89,12 @@ namespace Reprodutor_Video
             Canais.ItemsSource = Informacoes;
         }
 
-         private void Canais_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    private void Canais_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             Infos clicado = (Infos)e.SelectedItem;
-           
-            
+            Player abrirvideo = new Player();
+            abrirvideo.Executar(clicado.linkurl, clicado.canalnome);
+           //Detail  = new Player(clicado.linkurl, clicado.canalnome));
 
         }
        

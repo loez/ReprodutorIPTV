@@ -4,7 +4,7 @@
              xmlns:roxv="clr-namespace:Rox;assembly=Rox.Xamarin.Video.Portable"
              x:Class="Reprodutor_Video.Player">
     <ContentPage.Content>
-        <StackLayout Spacing="10">
+        <StackLayout Spacing="10" >
             <Label x:Name="Assistindo" HorizontalTextAlignment="Center" />
             <roxv:VideoView x:Name="VPlayer" AutoPlay="True" HeightRequest="900" WidthRequest="600" ShowController="True" /> 
         </StackLayout>
