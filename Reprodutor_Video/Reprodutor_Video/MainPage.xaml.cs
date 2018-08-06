@@ -59,11 +59,18 @@ namespace Reprodutor_Video
         async private void IR_Clicked(object sender, EventArgs e)
         {
             var wc = new HttpClient();
-            
+           
             //var wc = new WebClient { Encoding = System.Text.Encoding.GetEncoding("ISO-8859-1") };
             //WebClient wc = new WebClient();
-           
-            string conteudo = await wc.GetStringAsync(new Uri("http://bit.ly/alex3d-lista"));
+            HttpResponseMessage response = wc.GetAsync(new Uri("http://bit.ly/alex3d-lista")).Result;
+            
+                var byteArray = response.Content.ReadAsByteArrayAsync().Result;
+                string resultado = Encoding.GetEncoding("ISO-8859-1").GetString(byteArray, 0, byteArray.Length);
+
+
+
+            string conteudo = resultado; //await wc.GetStringAsync(new Uri("http://bit.ly/alex3d-lista"));
+
             //string conteudo = wc.DownloadString("http://bit.ly/alex3d-lista");
 
 
