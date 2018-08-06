@@ -8,6 +8,8 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Reprodutor_Video;
+using System.Net.Http;
+
 namespace Reprodutor_Video
 {
     public partial class MainPage : MasterDetailPage
@@ -54,12 +56,15 @@ namespace Reprodutor_Video
             return match.Value;
         }
 
-        private void IR_Clicked(object sender, EventArgs e)
+        async private void IR_Clicked(object sender, EventArgs e)
         {
-            var wc = new WebClient { Encoding = System.Text.Encoding.GetEncoding("ISO-8859-1") };
+            var wc = new HttpClient();
+            
+            //var wc = new WebClient { Encoding = System.Text.Encoding.GetEncoding("ISO-8859-1") };
             //WebClient wc = new WebClient();
-
-            string conteudo = wc.DownloadString("http://bit.ly/alex3d-lista");
+           
+            string conteudo = await wc.GetStringAsync(new Uri("http://bit.ly/alex3d-lista"));
+            //string conteudo = wc.DownloadString("http://bit.ly/alex3d-lista");
 
 
             //m3uParser1 = new M3uParser(conteudo);
@@ -93,9 +98,9 @@ namespace Reprodutor_Video
         {
             Infos clicado = (Infos)e.SelectedItem;
             Player abrirvideo = new Player();
-            abrirvideo.Executar(clicado.linkurl, clicado.canalnome);
-           //Detail  = new Player(clicado.linkurl, clicado.canalnome));
-
+            
+                //abrirvideo.Executar(clicado.linkurl, clicado.canalnome);
+                
         }
        
     }

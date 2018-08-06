@@ -11,14 +11,13 @@ namespace Reprodutor_Video
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Player : ContentPage
 	{
-        public string link;
-        public string canal;
-        
+        public string link { get; set; }
+        public string canal { get; set; }
+
         public Player ()
 		{
 			InitializeComponent ();
-
-        }
+            VPlayer.Source = this.link;        }
 
         
        
@@ -26,7 +25,7 @@ namespace Reprodutor_Video
         public void Executar (string linksource,string nomecanal)
         {
            
-            link = linksource;
+            this.link = linksource;
             canal = nomecanal;
             DisplayAlert(canal, link, "OK");
            

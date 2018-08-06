@@ -16,7 +16,7 @@
                     <Button x:Name="IR" Text="IR" Clicked="IR_Clicked" />
                 </StackLayout>
                     <Label Text="Canais:"/>
-                    <ListView x:Name="Canais" ItemSelected="Canais_ItemSelected" HorizontalOptions="Fill">
+                    <ListView x:Name="Canais" ItemSelected="Canais_ItemSelected" HorizontalOptions="Fill" >
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>

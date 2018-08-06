@@ -6,7 +6,7 @@
     <ContentPage.Content>
         <StackLayout Spacing="10" >
             <Label x:Name="Assistindo" HorizontalTextAlignment="Center" />
-            <roxv:VideoView x:Name="VPlayer" AutoPlay="True" HeightRequest="900" WidthRequest="600" ShowController="True" /> 
+            <roxv:VideoView x:Name="VPlayer" AutoPlay="False" HeightRequest="900" WidthRequest="600" ShowController="True" /> 
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
